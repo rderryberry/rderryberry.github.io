@@ -1,3 +1,5 @@
+title: "Richard Derryberry"
+
 collections:
   authors:
     output: true
@@ -24,4 +26,4 @@ plugins:
   - jekyll-seo-tag
 
 # Build settings
-remote_theme: alshedivat/al-folio
+# remote_theme: alshedivat/al-folio
