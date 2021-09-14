@@ -14,7 +14,7 @@
 
   <div id="{{entry.key}}" class="col-sm-8">
     {% if entry.type == "thesis" %}
-      {{reference}}
+      {{ reference }} (Doctoral Thesis)
     {% else %}
       <div class="title">{{entry.title}}</div>
       <div class="author">
@@ -69,9 +69,15 @@
 
       <div class="periodical">
       {% if entry.type == "article" %}
-        <em>{{entry.journal}}</em>
+        <em>{{entry.fjournal}}</em>,
       {% elsif entry.type == "inproceedings" %}
-        <em>In {{entry.booktitle}}</em>
+        In <em>{{ entry.booktitle }}</em>,
+      {% elsif entry.type == "incollection" %}
+        In <em>{{ entry.booktitle }}</em>,
+      {% elsif entry.type == "phdthesis" %}
+        Ph.D. Thesis ({{ entry.school }}),
+      {% elsif entry.type == "misc" %}
+        Preprint,
       {% endif %}
       {% if entry.year %}
         {{entry.year}}

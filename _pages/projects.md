@@ -2,9 +2,9 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Research projects at the intersection of mathematics and physics
 nav: true
-display_categories: [work, fun]
+display_categories:
 horizontal: false
 ---
 <div class="projects">

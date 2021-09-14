@@ -1,0 +1,893 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35879,        885]
+NotebookOptionsPosition[     33001,        821]
+NotebookOutlinePosition[     33353,        837]
+CellTagsIndexPosition[     33310,        834]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["The Wave Equation: Right moving solution I", "Section",
+ CellChangeTimes->{{3.756472102666749*^9, 3.756472122162903*^9}, {
+  3.756473626615247*^9, 
+  3.756473636470002*^9}},ExpressionUUID->"630e8e2b-1771-4508-afc1-\
+083ccbfc5753"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"x", "-", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Right moving solution to the wave equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756472158949128*^9, 3.7564722298238487`*^9}, {
+  3.7564722762100363`*^9, 3.75647228548501*^9}, {3.75649540470745*^9, 
+  3.75649541837473*^9}},
+ CellLabel->
+  "In[231]:=",ExpressionUUID->"6680671e-fba8-4e80-859f-e61c2e3fdc26"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0.6186923980712891, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -10, 10}}, Typeset`size$$ = {
+    360., {123., 128.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$578618$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$578618$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        Sin[$CellContext`x - $CellContext`t$$], {$CellContext`x, -10, 10}, 
+        PlotRange -> {-1, 1}, PlotLabel -> 
+        "Right moving solution to the wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -10, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {182., 188.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7564722317665358`*^9, 3.756495419676916*^9, 
+  3.75676768507264*^9},
+ CellLabel->
+  "Out[231]=",ExpressionUUID->"638d815e-58fd-4e8f-bf30-b39a6a167d02"]
+}, {2}]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["The Wave Equation: Left moving solution I", "Section",
+ CellChangeTimes->{{3.756472123928581*^9, 3.75647213270892*^9}, {
+  3.756473638636016*^9, 
+  3.7564736389841747`*^9}},ExpressionUUID->"0fc803ae-f74b-403d-b3da-\
+c23c6c5e3962"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Sin", "[", 
+      RowBox[{"x", "+", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Left moving solution to the wave equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756472242930438*^9, 3.756472243165594*^9}, {
+  3.756472289949325*^9, 3.756472290375062*^9}, {3.756495433816992*^9, 
+  3.756495436958538*^9}},
+ CellLabel->
+  "In[232]:=",ExpressionUUID->"5fa38f9d-48bb-433e-bb89-0346d537451a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -10, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -10, 10}}, Typeset`size$$ = {
+    360., {123., 128.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$578952$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$578952$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        Sin[$CellContext`x + $CellContext`t$$], {$CellContext`x, -10, 10}, 
+        PlotRange -> {-1, 1}, PlotLabel -> 
+        "Left moving solution to the wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -10, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {168., 174.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.756472243608295*^9, 3.7564954393892183`*^9},
+ CellLabel->
+  "Out[232]=",ExpressionUUID->"c08ea922-72bd-4b85-8140-90d1b8616840"]
+}, {2}]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The Wave Equation : Superposition of left and right movers I to form standing \
+wave\
+\>", "Section",
+ CellChangeTimes->{{3.7564721345403633`*^9, 3.756472150822731*^9}, {
+  3.7564736430891237`*^9, 3.756473703336182*^9}, {3.756473737218322*^9, 
+  3.756473742679141*^9}, {3.756474306916548*^9, 
+  3.756474308176772*^9}},ExpressionUUID->"7c7dda69-e6f5-4421-ac40-\
+d7c4ce80f334"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"x", "-", "t"}], "]"}], "-", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"x", "+", "t"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "2"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Standing wave solution to the wave equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "-", "t"}], "]"}], "-", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "+", "t"}], "]"}]}], ",", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", "-", "t"}], "]"}], ",", 
+       RowBox[{"-", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "+", "t"}], "]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "2"}], "}"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<superposition\>\"", ",", "\"\<right mover\>\"", ",", 
+        "\"\<left mover\>\""}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", "\"\<Standing wave (with decomposition)\>\""}]}],
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.756472255599041*^9, 3.756472295841407*^9}, {
+  3.756473606583024*^9, 3.7564736103447247`*^9}, {3.756488480015809*^9, 
+  3.756488508380598*^9}, {3.7564885441645927`*^9, 3.756488608346737*^9}, {
+  3.756495459794208*^9, 3.756495474257576*^9}},
+ CellLabel->
+  "In[237]:=",ExpressionUUID->"c2be1eb8-199e-46b6-811e-894d1ac54f3c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -10, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -10, 10}}, Typeset`size$$ = {
+    360., {123., 128.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$580353$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$580353$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[Sin[$CellContext`x - $CellContext`t$$] - 
+        Sin[$CellContext`x + $CellContext`t$$], {$CellContext`x, -10, 10}, 
+        PlotRange -> {-2, 2}, PlotLabel -> 
+        "Standing wave solution to the wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -10, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {168., 174.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.756472266488695*^9, 3.756472296775567*^9, {3.756473611745936*^9, 
+   3.756473613497867*^9}, 3.7564885092627487`*^9, 3.7564885596836042`*^9, {
+   3.7564885962877197`*^9, 3.7564886088899727`*^9}, {3.7564954644121304`*^9, 
+   3.756495474628338*^9}},
+ CellLabel->
+  "Out[237]=",ExpressionUUID->"e4b7217b-4513-40b4-9a4a-4a85e120111b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -2.794424057006836, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -10, 10}}, Typeset`size$$ = {
+    483., {123., 128.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$580377$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -10}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$580377$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[{Sin[$CellContext`x - $CellContext`t$$] - 
+         Sin[$CellContext`x + $CellContext`t$$], 
+         Sin[$CellContext`x - $CellContext`t$$], -
+         Sin[$CellContext`x + $CellContext`t$$]}, {$CellContext`x, -10, 10}, 
+        PlotRange -> {-2, 2}, 
+        PlotLegends -> {"superposition", "right mover", "left mover"}, 
+        PlotLabel -> "Standing wave (with decomposition)"], 
+      "Specifications" :> {{$CellContext`t$$, -10, 10}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{528., {182., 188.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.756472266488695*^9, 3.756472296775567*^9, {3.756473611745936*^9, 
+   3.756473613497867*^9}, 3.7564885092627487`*^9, 3.7564885596836042`*^9, {
+   3.7564885962877197`*^9, 3.7564886088899727`*^9}, {3.7564954644121304`*^9, 
+   3.7564954747015142`*^9}, 3.756767709484314*^9},
+ CellLabel->
+  "Out[238]=",ExpressionUUID->"72eb34b7-ac96-433b-bf2e-7a9436568bb4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Wave Equation: Right moving solution II", "Section",
+ CellChangeTimes->{{3.756472102666749*^9, 3.756472122162903*^9}, {
+   3.756473626615247*^9, 3.756473636470002*^9}, 
+   3.7564737533518343`*^9},ExpressionUUID->"0fdae0cf-e139-4eed-9c7a-\
+e76bcece55ca"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"x", "-", "t"}], ")"}], "/", "2"}], ")"}], "^", "2"}], "*", 
+      
+      RowBox[{"Sin", "[", 
+       RowBox[{"x", "-", "t"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "20"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "110"}], ",", "60"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Right moving solution to the wave equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "14"}], ",", "20"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756472158949128*^9, 3.7564722298238487`*^9}, {
+  3.7564722762100363`*^9, 3.75647228548501*^9}, {3.7564737811383543`*^9, 
+  3.7564739182224627`*^9}, {3.75649549547707*^9, 3.756495495838089*^9}, {
+  3.756496000074553*^9, 3.756496024220442*^9}},
+ CellLabel->
+  "In[247]:=",ExpressionUUID->"d25f1118-ac12-4279-8d6d-3dc1869f4256"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -8.615218353271484, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -14, 20}}, Typeset`size$$ = {
+    360., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$596381$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -14}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$596381$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[(($CellContext`x - $CellContext`t$$)/2)^2 
+        Sin[$CellContext`x - $CellContext`t$$], {$CellContext`x, -20, 10}, 
+        PlotRange -> {-110, 60}, PlotLabel -> 
+        "Right moving solution to the wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -14, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {176., 182.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.7564722317665358`*^9, {3.756473788492857*^9, 3.756473838804047*^9}, 
+   3.756473872039987*^9, {3.7564739025101957`*^9, 3.756473931064163*^9}, 
+   3.7564955203524637`*^9, 3.756496037388443*^9, 3.756767723719921*^9},
+ CellLabel->
+  "Out[247]=",ExpressionUUID->"76318246-6ef8-4724-8820-1e9487023950"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Wave Equation: Left moving solution II", "Section",
+ CellChangeTimes->{{3.756472123928581*^9, 3.75647213270892*^9}, {
+   3.756473638636016*^9, 3.7564736389841747`*^9}, 
+   3.7564740201794987`*^9},ExpressionUUID->"d36080a5-d4b7-4418-bbb8-\
+ddd83fa7984c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"100", "/", 
+      RowBox[{"Cosh", "[", 
+       RowBox[{"x", "+", "t"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "20"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "110"}], ",", "60"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Left moving solution to the wave equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "14"}], ",", "20"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756472242930438*^9, 3.756472243165594*^9}, {
+   3.756472289949325*^9, 3.756472290375062*^9}, 3.7564739773434677`*^9, {
+   3.7564740330310173`*^9, 3.756474046673842*^9}, {3.756474126909809*^9, 
+   3.7564741315905657`*^9}, {3.7564955093509407`*^9, 3.756495512464036*^9}, {
+   3.756496003356037*^9, 3.7564960272024727`*^9}},
+ CellLabel->
+  "In[248]:=",ExpressionUUID->"dcd535c8-0e31-4695-895a-51e1b523d4fc"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -9.21634407043457, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -14, 20}}, Typeset`size$$ = {
+    360., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$597848$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -14}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$597848$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[100/Cosh[$CellContext`x + $CellContext`t$$], {$CellContext`x, -20, 
+         10}, PlotRange -> {-110, 60}, PlotLabel -> 
+        "Left moving solution to the wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -14, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {176., 182.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7564740342644043`*^9, 3.756474047037253*^9}, 
+   3.7564741319747257`*^9, 3.756495517796535*^9, 3.756496043701149*^9, 
+   3.756767733251618*^9},
+ CellLabel->
+  "Out[248]=",ExpressionUUID->"afe5c825-cf10-49b4-8fa8-ec2680582882"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The Wave Equation : Superposition of left and right movers II\
+\>", "Section",
+ CellChangeTimes->{{3.7564721345403633`*^9, 3.756472150822731*^9}, {
+  3.7564736430891237`*^9, 3.756473703336182*^9}, {3.756473737218322*^9, 
+  3.756473742679141*^9}, {3.75647407524514*^9, 
+  3.756474076003223*^9}},ExpressionUUID->"658a093c-5eec-4819-b796-\
+a33ddd2a1e21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"0.6", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"x", "-", "t"}], ")"}], "/", "2"}], ")"}], "^", "2"}], 
+         "*", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"x", "-", "t"}], "]"}]}], "-", 
+        RowBox[{"100", "/", 
+         RowBox[{"Cosh", "[", 
+          RowBox[{"x", "+", "t"}], "]"}]}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "20"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "110"}], ",", "60"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Superposition of left and right moving solutions to wave \
+equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "14"}], ",", "20"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0.6", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"x", "-", "t"}], ")"}], "/", "2"}], ")"}], "^", "2"}], 
+           "*", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"x", "-", "t"}], "]"}]}], "-", 
+          RowBox[{"100", "/", 
+           RowBox[{"Cosh", "[", 
+            RowBox[{"x", "+", "t"}], "]"}]}]}], ")"}]}], ",", 
+       RowBox[{"0.6", "*", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", "-", "t"}], ")"}], "/", "2"}], ")"}], "^", "2"}], 
+        "*", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "-", "t"}], "]"}]}], ",", 
+       RowBox[{"0.6", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "100"}], "/", 
+          RowBox[{"Cosh", "[", 
+           RowBox[{"x", "+", "t"}], "]"}]}], ")"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "20"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "110"}], ",", "60"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Superposition of left and right moving solutions (with \
+decomposition)\>\""}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<superposition\>\"", ",", "\"\<right mover\>\"", ",", 
+        "\"\<left mover\>\""}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "14"}], ",", "20"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.756472255599041*^9, 3.756472295841407*^9}, {
+  3.756473606583024*^9, 3.7564736103447247`*^9}, {3.756474086812785*^9, 
+  3.756474109566667*^9}, {3.756474144677898*^9, 3.7564741724551888`*^9}, {
+  3.756487284819846*^9, 3.7564875317998857`*^9}, {3.756487569901764*^9, 
+  3.756487584837902*^9}, {3.756487634151932*^9, 3.756487702381459*^9}, {
+  3.756488292910439*^9, 3.756488297952792*^9}, {3.7564883508004417`*^9, 
+  3.756488380737513*^9}, {3.7564886415035353`*^9, 3.756488699038409*^9}, {
+  3.756495529953587*^9, 3.7564955546690283`*^9}},
+ CellLabel->
+  "In[243]:=",ExpressionUUID->"9662c715-628c-4289-9687-b7a2555801c1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 5.9823572158813505`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -14, 20}}, Typeset`size$$ = {
+    360., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$584559$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -14}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$584559$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[0.6 ((($CellContext`x - $CellContext`t$$)/2)^2 
+          Sin[$CellContext`x - $CellContext`t$$] - 100/
+         Cosh[$CellContext`x + $CellContext`t$$]), {$CellContext`x, -20, 10}, 
+        PlotRange -> {-110, 60}, PlotLabel -> 
+        "Superposition of left and right moving solutions to wave equation"], 
+      "Specifications" :> {{$CellContext`t$$, -14, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {176., 182.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.756472266488695*^9, 3.756472296775567*^9, {3.756473611745936*^9, 
+   3.756473613497867*^9}, {3.756474099269298*^9, 3.7564741100076227`*^9}, {
+   3.756474145193687*^9, 3.756474198441592*^9}, {3.7564873031149893`*^9, 
+   3.756487353530787*^9}, {3.756487384280651*^9, 3.756487532196474*^9}, {
+   3.7564875705836277`*^9, 3.7564875954963827`*^9}, 3.756487636784687*^9, {
+   3.756487684282441*^9, 3.756487703077939*^9}, 3.756488298436186*^9, 
+   3.7564883810696774`*^9, {3.75648865612039*^9, 3.756488661941901*^9}, 
+   3.7564886995253973`*^9, {3.756495539882188*^9, 3.7564955553077497`*^9}, 
+   3.756767742659862*^9},
+ CellLabel->
+  "Out[243]=",ExpressionUUID->"c113543c-aa0c-4817-9d45-6c97e19768f6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = -13.711735916137695`, Typeset`show$$ =
+     True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], -14, 20}}, Typeset`size$$ = {
+    483., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$584583$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = -14}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$584583$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[{0.6 ((($CellContext`x - $CellContext`t$$)/2)^2 
+           Sin[$CellContext`x - $CellContext`t$$] - 100/
+          Cosh[$CellContext`x + $CellContext`t$$]), (
+          0.6 (($CellContext`x - $CellContext`t$$)/2)^2) 
+         Sin[$CellContext`x - $CellContext`t$$], 
+         0.6 ((-100)/
+          Cosh[$CellContext`x + $CellContext`t$$])}, {$CellContext`x, -20, 
+         10}, PlotRange -> {-110, 60}, PlotLabel -> 
+        "Superposition of left and right moving solutions (with \
+decomposition)", 
+        PlotLegends -> {"superposition", "right mover", "left mover"}], 
+      "Specifications" :> {{$CellContext`t$$, -14, 20}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{528., {176., 182.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.756472266488695*^9, 3.756472296775567*^9, {3.756473611745936*^9, 
+   3.756473613497867*^9}, {3.756474099269298*^9, 3.7564741100076227`*^9}, {
+   3.756474145193687*^9, 3.756474198441592*^9}, {3.7564873031149893`*^9, 
+   3.756487353530787*^9}, {3.756487384280651*^9, 3.756487532196474*^9}, {
+   3.7564875705836277`*^9, 3.7564875954963827`*^9}, 3.756487636784687*^9, {
+   3.756487684282441*^9, 3.756487703077939*^9}, 3.756488298436186*^9, 
+   3.7564883810696774`*^9, {3.75648865612039*^9, 3.756488661941901*^9}, 
+   3.7564886995253973`*^9, {3.756495539882188*^9, 3.756495555385725*^9}, 
+   3.756767754217557*^9},
+ CellLabel->
+  "Out[244]=",ExpressionUUID->"f4843e13-42a3-4f62-b9f2-33b9862dc465"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Wave Equation: IVP solution", "Section",
+ CellChangeTimes->{{3.756503998843199*^9, 
+  3.756504013434725*^9}},ExpressionUUID->"8cde34ed-4b1a-4dea-918a-\
+8034dd8ef0e6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"10", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Sech", "[", 
+          RowBox[{"x", "+", "t"}], "]"}], "+", 
+         RowBox[{"Sech", "[", 
+          RowBox[{"x", "-", "t"}], "]"}]}], ")"}]}], "+", "t"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "50"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "51"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756504015717803*^9, 3.75650402109033*^9}, {
+  3.756504187040197*^9, 3.7565042890892353`*^9}, {3.756504320506754*^9, 
+  3.7565043432561407`*^9}, {3.756504489333665*^9, 3.7565045077556334`*^9}, {
+  3.756504551013631*^9, 3.756504586675344*^9}},
+ CellLabel->
+  "In[279]:=",ExpressionUUID->"0e82f273-5548-447f-8f32-4bcd72215177"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 51}}, Typeset`size$$ = {360., {119., 123.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$692055$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$692055$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[10 (Sech[$CellContext`x + $CellContext`t$$] + 
+          Sech[$CellContext`x - $CellContext`t$$]) + $CellContext`t$$, \
+{$CellContext`x, -100, 100}, PlotRange -> {0, 50}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 51}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {177., 183.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.756504253082479*^9, 3.756504289449891*^9}, {
+   3.7565043212191973`*^9, 3.756504344489646*^9}, {3.756504493301837*^9, 
+   3.756504508168989*^9}, {3.756504552576611*^9, 3.7565045869993477`*^9}, 
+   3.756767766265727*^9},
+ CellLabel->
+  "Out[279]=",ExpressionUUID->"1afb66d4-ef5c-4a97-86dd-12e581602ebe"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 700},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 236, 4, 67, "Section",ExpressionUUID->"630e8e2b-1771-4508-afc1-083ccbfc5753"],
+Cell[CellGroupData[{
+Cell[841, 30, 862, 24, 52, "Input",ExpressionUUID->"6680671e-fba8-4e80-859f-e61c2e3fdc26"],
+Cell[1706, 56, 1864, 38, 389, "Output",ExpressionUUID->"638d815e-58fd-4e8f-bf30-b39a6a167d02"]
+}, {2}]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3616, 100, 236, 4, 53, "Section",ExpressionUUID->"0fc803ae-f74b-403d-b3da-c23c6c5e3962"],
+Cell[CellGroupData[{
+Cell[3877, 108, 860, 24, 52, "Input",ExpressionUUID->"5fa38f9d-48bb-433e-bb89-0346d537451a"],
+Cell[4740, 134, 1824, 37, 361, "Output",ExpressionUUID->"c08ea922-72bd-4b85-8140-90d1b8616840"]
+}, {2}]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6610, 177, 385, 8, 91, "Section",ExpressionUUID->"7c7dda69-e6f5-4421-ac40-d7c4ce80f334"],
+Cell[CellGroupData[{
+Cell[7020, 189, 2166, 63, 115, "Input",ExpressionUUID->"c2be1eb8-199e-46b6-811e-894d1ac54f3c"],
+Cell[9189, 254, 2079, 42, 361, "Output",ExpressionUUID->"e4b7217b-4513-40b4-9a4a-4a85e120111b"],
+Cell[11271, 298, 2285, 45, 389, "Output",ExpressionUUID->"72eb34b7-ac96-433b-bf2e-7a9436568bb4"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13605, 349, 263, 4, 67, "Section",ExpressionUUID->"0fdae0cf-e139-4eed-9c7a-e76bcece55ca"],
+Cell[CellGroupData[{
+Cell[13893, 357, 1145, 32, 52, "Input",ExpressionUUID->"d25f1118-ac12-4279-8d6d-3dc1869f4256"],
+Cell[15041, 391, 2065, 41, 377, "Output",ExpressionUUID->"76318246-6ef8-4724-8820-1e9487023950"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17155, 438, 263, 4, 67, "Section",ExpressionUUID->"d36080a5-d4b7-4418-bbb8-ddd83fa7984c"],
+Cell[CellGroupData[{
+Cell[17443, 446, 1074, 27, 52, "Input",ExpressionUUID->"dcd535c8-0e31-4695-895a-51e1b523d4fc"],
+Cell[18520, 475, 1945, 39, 377, "Output",ExpressionUUID->"afe5c825-cf10-49b4-8fa8-ec2680582882"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20514, 520, 361, 7, 67, "Section",ExpressionUUID->"658a093c-5eec-4819-b796-a33ddd2a1e21"],
+Cell[CellGroupData[{
+Cell[20900, 531, 3456, 99, 199, "Input",ExpressionUUID->"9662c715-628c-4289-9687-b7a2555801c1"],
+Cell[24359, 632, 2550, 48, 377, "Output",ExpressionUUID->"c113543c-aa0c-4817-9d45-6c97e19768f6"],
+Cell[26912, 682, 2816, 54, 377, "Output",ExpressionUUID->"f4843e13-42a3-4f62-b9f2-33b9862dc465"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29777, 742, 176, 3, 67, "Section",ExpressionUUID->"8cde34ed-4b1a-4dea-918a-8034dd8ef0e6"],
+Cell[CellGroupData[{
+Cell[29978, 749, 995, 26, 52, "Input",ExpressionUUID->"0e82f273-5548-447f-8f32-4bcd72215177"],
+Cell[30976, 777, 1997, 40, 379, "Output",ExpressionUUID->"1afb66d4-ef5c-4a97-86dd-12e581602ebe"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

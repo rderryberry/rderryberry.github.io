@@ -1,0 +1,528 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20497,        520]
+NotebookOptionsPosition[     19000,        482]
+NotebookOutlinePosition[     19354,        498]
+CellTagsIndexPosition[     19311,        495]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["The Homogeneous Wave Equation: IVP", "Section",
+ CellChangeTimes->{{3.756748463015594*^9, 
+  3.756748476882449*^9}},ExpressionUUID->"a696e3df-1539-48cd-ae02-\
+3fb489595446"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"0.5", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "+", "t"}], "]"}], "+", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"x", "-", "t"}], "]"}]}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.25"}], ",", "1.25"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Standing Wave Solution to Homogeneous Wave Equation\>\""}]}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"10", "*", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756748481686088*^9, 3.7567485557999277`*^9}, {
+  3.756857678529949*^9, 3.756857702053581*^9}},
+ CellLabel->
+  "In[341]:=",ExpressionUUID->"6d1381c9-984b-4680-b335-2bdcd1e9303f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 10 Pi}}, Typeset`size$$ = {
+    360., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$1134178$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1134178$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[0.5 (Sin[$CellContext`x + $CellContext`t$$] + 
+         Sin[$CellContext`x - $CellContext`t$$]), {$CellContext`x, -15, 15}, 
+        PlotRange -> {-1.25, 1.25}, PlotLabel -> 
+        "Standing Wave Solution to Homogeneous Wave Equation"], 
+      "Specifications" :> {{$CellContext`t$$, 0, 10 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {162., 168.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.756748532190729*^9, 3.756748556384034*^9}, 
+   3.7567664591107893`*^9, 3.756857703838284*^9},
+ CellLabel->
+  "Out[341]=",ExpressionUUID->"38cb56a6-6dcd-4601-8138-9341047431f7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Inhomogeneous Wave Equation: IVP", "Section",
+ CellChangeTimes->{{3.756747982221587*^9, 
+  3.75674799739826*^9}},ExpressionUUID->"8906601d-8eb6-4299-ae71-\
+82ca71167236"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"0.75", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", "+", "t"}], "]"}]}], "+", 
+      RowBox[{"0.25", "*", 
+       RowBox[{"Sin", "[", 
+        RowBox[{"x", "-", "t"}], "]"}]}], "-", 
+      RowBox[{"0.25", "*", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"x", "+", "t"}], "]"}], "+", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"x", "-", "t"}], "]"}]}], ")"}]}], "+", 
+      RowBox[{"0.5", "*", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", "t"}], "]"}], "*", 
+       RowBox[{"Cos", "[", "x", "]"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.25"}], ",", "1.25"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Effect of Slight Perturbation to Homogeneous Wave \
+Equation\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"10", "*", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756748009575459*^9, 3.756748268527069*^9}, {
+  3.7568577091392517`*^9, 3.7568577490035477`*^9}},
+ CellLabel->
+  "In[342]:=",ExpressionUUID->"6ca99621-92c2-488c-8a77-32b4cef17202"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 10 Pi}}, Typeset`size$$ = {
+    360., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$1134294$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1134294$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[0.75 Sin[$CellContext`x + $CellContext`t$$] + 
+        0.25 Sin[$CellContext`x - $CellContext`t$$] - 
+        0.25 (Cos[$CellContext`x + $CellContext`t$$] + 
+         Cos[$CellContext`x - $CellContext`t$$]) + 
+        0.5 Exp[-$CellContext`t$$] Cos[$CellContext`x], {$CellContext`x, -15, 
+         15}, PlotRange -> {-1.25, 1.25}, PlotLabel -> 
+        "Effect of Slight Perturbation to Homogeneous Wave Equation"], 
+      "Specifications" :> {{$CellContext`t$$, 0, 10 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {162., 168.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7567481532602167`*^9, 3.756748270933421*^9}, 
+   3.7567664726609907`*^9, 3.756857750149982*^9},
+ CellLabel->
+  "Out[342]=",ExpressionUUID->"ed498213-010a-487b-8dee-609ef7c609d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"0.75", "*", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"x", "+", "t"}], "]"}]}], "+", 
+        RowBox[{"0.25", "*", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"x", "-", "t"}], "]"}]}], "-", 
+        RowBox[{"0.25", "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Cos", "[", 
+            RowBox[{"x", "+", "t"}], "]"}], "+", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"x", "-", "t"}], "]"}]}], ")"}]}], "+", 
+        RowBox[{"0.5", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"-", "t"}], "]"}], "*", 
+         RowBox[{"Cos", "[", "x", "]"}]}]}], ",", 
+       RowBox[{"0.5", "*", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"-", "t"}], "]"}], "*", 
+        RowBox[{"Cos", "[", "x", "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"0.75", "*", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"x", "+", "t"}], "]"}]}], "-", 
+        RowBox[{"0.25", "*", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"x", "+", "t"}], "]"}]}]}], ",", 
+       RowBox[{"0.25", "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Sin", "[", 
+           RowBox[{"x", "-", "t"}], "]"}], "-", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"x", "-", "t"}], "]"}]}], ")"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "15"}], ",", "15"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.25"}], ",", "1.25"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Decomposition into left/right-movers and forcing effect\>\""}], 
+     ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<superposition\>\"", ",", "\"\<external force\>\"", ",", 
+        "\"\<left mover\>\"", ",", "\"\<right mover\>\""}], "}"}]}]}], "]"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"10", "*", "Pi"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756748288550415*^9, 3.75674829767776*^9}, {
+  3.756748366333799*^9, 3.756748418487605*^9}, {3.756857762382588*^9, 
+  3.756857874368059*^9}},
+ CellLabel->
+  "In[344]:=",ExpressionUUID->"8059f92b-34be-40a4-9330-2403699d5858"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 10 Pi}}, Typeset`size$$ = {
+    485., {117., 122.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$1139249$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1139249$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[{0.75 Sin[$CellContext`x + $CellContext`t$$] + 
+         0.25 Sin[$CellContext`x - $CellContext`t$$] - 
+         0.25 (Cos[$CellContext`x + $CellContext`t$$] + 
+          Cos[$CellContext`x - $CellContext`t$$]) + 
+         0.5 Exp[-$CellContext`t$$] Cos[$CellContext`x], 0.5 
+         Exp[-$CellContext`t$$] Cos[$CellContext`x], 
+         0.75 Sin[$CellContext`x + $CellContext`t$$] - 0.25 
+         Cos[$CellContext`x + $CellContext`t$$], 
+         0.25 (Sin[$CellContext`x - $CellContext`t$$] - 
+          Cos[$CellContext`x - $CellContext`t$$])}, {$CellContext`x, -15, 15},
+         PlotRange -> {-1.25, 1.25}, PlotLabel -> 
+        "Decomposition into left/right-movers and forcing effect", 
+        PlotLegends -> {
+         "superposition", "external force", "left mover", "right mover"}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 10 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{530., {162., 168.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.756748300339826*^9, 3.756748421301407*^9, 3.7567664875720043`*^9, {
+   3.756857865567227*^9, 3.756857874966021*^9}},
+ CellLabel->
+  "Out[344]=",ExpressionUUID->"8d003881-5fdb-4382-95a1-81847f9298e7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The Inhomogeneous Wave Equation: Turning on and off a force", "Section",
+ CellChangeTimes->{{3.7567514421002607`*^9, 
+  3.7567514548091516`*^9}},ExpressionUUID->"18b36483-20b5-4093-b79c-\
+8d392f080234"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"UnitStep", "[", 
+       RowBox[{"t", "-", "1"}], "]"}], "*", 
+      RowBox[{"(", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{"UnitStep", "[", 
+            RowBox[{"t", "-", "2"}], "]"}]}], ")"}], "*", 
+         RowBox[{"(", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Cos", "[", "x", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"c", "^", "2"}], ")"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"Cos", "[", 
+               RowBox[{"x", "+", 
+                RowBox[{"c", "*", 
+                 RowBox[{"(", 
+                  RowBox[{"t", "-", "1"}], ")"}]}]}], "]"}], "+", 
+              RowBox[{"Cos", "[", 
+               RowBox[{"x", "-", 
+                RowBox[{"c", "*", 
+                 RowBox[{"(", 
+                  RowBox[{"t", "-", "1"}], ")"}]}]}], "]"}]}], ")"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"2", "*", 
+              RowBox[{"c", "^", "2"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+          ")"}]}], "\[IndentingNewLine]", "+", 
+        RowBox[{
+         RowBox[{"UnitStep", "[", 
+          RowBox[{"t", "-", "2"}], "]"}], "*", 
+         RowBox[{"(", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Cos", "[", 
+              RowBox[{"x", "+", 
+               RowBox[{"c", "*", 
+                RowBox[{"(", 
+                 RowBox[{"t", "-", "2"}], ")"}]}]}], "]"}], "-", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"x", "+", 
+               RowBox[{"c", "*", 
+                RowBox[{"(", 
+                 RowBox[{"t", "-", "1"}], ")"}]}]}], "]"}], "+", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"x", "-", 
+               RowBox[{"c", "*", 
+                RowBox[{"(", 
+                 RowBox[{"t", "-", "2"}], ")"}]}]}], "]"}], "-", 
+             RowBox[{"Cos", "[", 
+              RowBox[{"x", "-", 
+               RowBox[{"c", "*", 
+                RowBox[{"(", 
+                 RowBox[{"t", "-", "1"}], ")"}]}]}], "]"}]}], ")"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"2", "*", 
+             RowBox[{"c", "^", "2"}]}], ")"}]}], ")"}]}]}], 
+       "\[IndentingNewLine]", ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{
+     "PlotLabel", "\[Rule]", 
+      "\"\<Application of finite duration force to stationary flat \
+string\>\""}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "20", ",", "0.1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.756751463649988*^9, 3.756751485900148*^9}, {
+  3.756751518129518*^9, 3.756751903043951*^9}, {3.7567519505243998`*^9, 
+  3.756752006040667*^9}, {3.756752060266406*^9, 3.756752062405354*^9}, {
+  3.7567521265732517`*^9, 3.756752209744515*^9}, {3.756752463115324*^9, 
+  3.75675250930474*^9}, {3.75685790840267*^9, 3.7568579403916073`*^9}},
+ CellLabel->
+  "In[345]:=",ExpressionUUID->"60fda554-b5d5-4c21-8ddb-fc6d8fc87104"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`c$$ = 1., $CellContext`t$$ = 0., 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 20, 0.1}, {
+      Hold[$CellContext`c$$], 1, 10}}, Typeset`size$$ = {360., {123., 128.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`t$1143516$$ = 0, $CellContext`c$1143517$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`c$$ = 1, $CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$1143516$$, 0], 
+        Hold[$CellContext`c$$, $CellContext`c$1143517$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[UnitStep[$CellContext`t$$ - 
+          1] ((1 - UnitStep[$CellContext`t$$ - 2]) (
+           Cos[$CellContext`x]/$CellContext`c$$^2 - (
+            Cos[$CellContext`x + $CellContext`c$$ ($CellContext`t$$ - 1)] + 
+            Cos[$CellContext`x - $CellContext`c$$ ($CellContext`t$$ - 1)])/(
+           2 $CellContext`c$$^2)) + 
+         UnitStep[$CellContext`t$$ - 2] ((
+            Cos[$CellContext`x + $CellContext`c$$ ($CellContext`t$$ - 2)] - 
+            Cos[$CellContext`x + $CellContext`c$$ ($CellContext`t$$ - 1)] + 
+            Cos[$CellContext`x - $CellContext`c$$ ($CellContext`t$$ - 2)] - 
+            Cos[$CellContext`x - $CellContext`c$$ ($CellContext`t$$ - 1)])/(
+           2 $CellContext`c$$^2))), {$CellContext`x, -10, 10}, 
+        PlotRange -> {-1, 1}, PlotLabel -> 
+        "Application of finite duration force to stationary flat string"], 
+      "Specifications" :> {{$CellContext`t$$, 0, 20, 0.1}, {$CellContext`c$$, 
+         1, 10}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {182., 188.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.75675215653373*^9, 3.7567522104447412`*^9}, {
+   3.756752467816453*^9, 3.756752513602449*^9}, 3.756766508825602*^9, 
+   3.7568579419786997`*^9},
+ CellLabel->
+  "Out[345]=",ExpressionUUID->"ca0fc79c-5d5d-48cc-99b1-c67ea0f54f36"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 700},
+WindowMargins->{{Automatic, 71}, {Automatic, 25}},
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 179, 3, 67, "Section",ExpressionUUID->"a696e3df-1539-48cd-ae02-3fb489595446"],
+Cell[CellGroupData[{
+Cell[784, 29, 994, 29, 73, "Input",ExpressionUUID->"6d1381c9-984b-4680-b335-2bdcd1e9303f"],
+Cell[1781, 60, 1945, 39, 349, "Output",ExpressionUUID->"38cb56a6-6dcd-4601-8138-9341047431f7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3775, 105, 180, 3, 67, "Section",ExpressionUUID->"8906601d-8eb6-4299-ae71-82ca71167236"],
+Cell[CellGroupData[{
+Cell[3980, 112, 1375, 40, 115, "Input",ExpressionUUID->"6ca99621-92c2-488c-8a77-32b4cef17202"],
+Cell[5358, 154, 2124, 42, 349, "Output",ExpressionUUID->"ed498213-010a-487b-8dee-609ef7c609d5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7519, 201, 2348, 67, 157, "Input",ExpressionUUID->"8059f92b-34be-40a4-9330-2403699d5858"],
+Cell[9870, 270, 2528, 50, 349, "Output",ExpressionUUID->"8d003881-5fdb-4382-95a1-81847f9298e7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12447, 326, 208, 3, 67, "Section",ExpressionUUID->"18b36483-20b5-4093-b79c-8d392f080234"],
+Cell[CellGroupData[{
+Cell[12680, 333, 3452, 90, 241, "Input",ExpressionUUID->"60fda554-b5d5-4c21-8ddb-fc6d8fc87104"],
+Cell[16135, 425, 2837, 53, 389, "Output",ExpressionUUID->"ca0fc79c-5d5d-48cc-99b1-c67ea0f54f36"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
