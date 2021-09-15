@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Research projects at the intersection of mathematics and physics
+description: research projects at the intersection of mathematics and physics
 nav: true
 display_categories:
 horizontal: false

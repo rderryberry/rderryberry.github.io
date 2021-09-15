@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching/learning
-description: Classes, seminars, notes, etc.
+title: pedagogy
+description: classes, seminars, notes, etc.
 nav: true
 display_categories:
 horizontal: false
