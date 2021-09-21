@@ -2,7 +2,7 @@
 layout: page
 title: Self-dual geometric Langlands
 description: A self-dual generalisation of geometric Langlands from Theory X
-img: /assets/img/reductions-of-X.png
+img: /assets/img/reductions-of-X-thumbnail.png
 importance: 1
 category: work
 ---
