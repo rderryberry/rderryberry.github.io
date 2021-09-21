@@ -15,7 +15,7 @@ A schematic overview of the derivation of usual and self-dual Langlands is prese
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/reductions-of-X.png' | relative_url }}" alt="Reductions of Theory X relevant to the usual and self-dual Langlands programs" title="Some reductions of theory X"/>
+        <img class="img-fluid rounded z-depth-1" src="{{ '/assets/img/X.png' | relative_url }}" alt="Reductions of Theory X relevant to the usual and self-dual Langlands programs" title="Some reductions of theory X"/>
     </div>
 </div>
 <div class="caption">
