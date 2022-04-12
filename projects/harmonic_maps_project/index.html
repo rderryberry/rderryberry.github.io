@@ -11,7 +11,7 @@
   Richard Derryberry
 
 
-  | blog
+  | Integrable harmonic map equations
 
 </title>
 <meta name="description" content="Professional website for Richard Derryberry
@@ -37,7 +37,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/harmonic_maps_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -101,8 +101,6 @@
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -184,18 +182,165 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Integrable harmonic map equations</h1>
+    <p class="post-description">Constructing integrable harmonic map equations from 4d Chern-Simons</p>
+  </header>
 
+  <article>
+    <p>As part of their work on deriving integrable systems from 4d Chern-Simons theory, Costello and Yamazaki <a class="citation" href="#CY2019">(Costello &amp; Yamazaki, 2019)</a> give a physical construction of a class of two-dimensional classical integrable field theories from the data of an algebraic curve \(C\),  a one-form \(\omega\) on \(C\), and a reductive group \(G\).  Fixing the input data, the target space of this integrable field theory is a certain open substack of \(\text{Bun}_G(C)\) which I will denote \(\text{Bun}_G^0(C)\). The existence of this integrable field theory implies a number of remarkable and novel algebro-geometric structures on \(\text{Bun}_G^0(C)\).</p>
 
-  <ul class="post-list">
-    
-  </ul>
+<p>In the paper <a class="citation" href="#Der21">(Derryberry, 2021)</a> I gave an algebro-geometric construction of these expected geometric structures, and proved that they satisfied the properties expected from the work of Costello and Yamazaki.</p>
 
+<p>Specifically, the structures that I construct on \(\text{Bun}_G^0(C)\) are, firstly, an algebraic metric and an algebraic 3-form. These are what are needed to define a classical \(\sigma\)-model with target \(\text{Bun}_G^0(C)\).  Further, for each \(z \in C\), I find <em>two</em> algebraic connections on the evaluation bundle \(P_z\) over \(\text{Bun}_G^0(C)\).  From the \(\sigma\)-model perspective, these two connections are what is needed to define the Lax matrix for a specific harmonic map equation (the equations of motion for the \(\sigma\)-model). The primary result of this paper is therefore that the class of harmonic map equations which arise in this manner are all integrable.</p>
+
+<p>Future directions for this project include:</p>
+<ul>
+  <li>The construction of explicit solutions to the harmonic map equations.</li>
+  <li>Leveraging integrability to understand the topology of the space of harmonic maps (cf <a class="citation" href="#Uhl89">(Uhlenbeck, 1989)</a>).</li>
+  <li>Proving a conjecture of Costello on the form of the 1-loop beta function for the \(\sigma\)-model (the statement and partial results can be found in <a class="citation" href="#Der21">(Derryberry, 2021)</a>).</li>
+</ul>
+
+<hr />
+
+<h4 id="references">References:</h4>
+
+<ol class="bibliography"><li><div class="row">
+  <!---
+  <div class="col-sm-2 abbr">
   
+  </div>
+  --->
 
+  <div id="CY2019" class="col-lg">
+    
+      <div class="title">Gauge Theory And Integrability, III</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Costello, Kevin,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  and Yamazaki, Masahito
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        Preprint, arXiv: 1908.02289,
+      
+      
+        2019
+      
+      </div>
+    
+
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <!---
+  <div class="col-sm-2 abbr">
+  
+  </div>
+  --->
+
+  <div id="Der21" class="col-lg">
+    
+      <div class="title">Lax formulation for harmonic maps to a moduli of bundles</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              <em>Derryberry, Richard</em>
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        Preprint, arXiv: 2106.09781,
+      
+      
+        2021
+      
+      </div>
+    
+
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <!---
+  <div class="col-sm-2 abbr">
+  
+  </div>
+  --->
+
+  <div id="Uhl89" class="col-lg">
+    
+      <div class="title">Harmonic maps into Lie groups: classical solutions of the
+              chiral model</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              Uhlenbeck, Karen
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of Differential Geometry</em>,
+      
+      
+        1989
+      
+      </div>
+    
+
+  </div>
+</div>
+</li></ol>
+
+  </article>
 
 </div>
 
